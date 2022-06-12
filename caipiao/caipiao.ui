@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>844</width>
+    <height>603</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_4">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_15">
+      <item>
+       <widget class="QLabel" name="label_4">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+          <bold>true</bold>
+          <underline>true</underline>
+         </font>
+        </property>
+        <property name="text">
+         <string>购买设置</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_5">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+          <bold>true</bold>
+          <underline>true</underline>
+         </font>
+        </property>
+        <property name="text">
+         <string>开奖结果</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="Line" name="line">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_16">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <item>
+             <widget class="QLabel" name="label">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+                <italic>false</italic>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>目标号码：</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="lineEdit">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="placeholderText">
+               <string>目标中奖号码，例如：23 09 18 31 28 14 02</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QLabel" name="label_2">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+                <italic>false</italic>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>守护号码：</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="textEdit">
+              <property name="documentTitle">
+               <string/>
+              </property>
+              <property name="placeholderText">
+               <string>自定义号码，可不写，例如：23 09 18 31 28 14 02 * 3 或者：23 09 18 31 28 14 02，23 09 18 31 28 14 03，以英文逗号分割每组数据</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QLabel" name="label_3">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+                <italic>false</italic>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>随机注数：</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="lineEdit_2">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="placeholderText">
+               <string>每次购买的随机注数</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_10">
+            <item>
+             <widget class="QLabel" name="label_12">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+                <italic>false</italic>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>花费金额：</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="lineEdit_9">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="placeholderText">
+               <string>预计花费的金额</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="Line" name="line_2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_11">
+            <item>
+             <widget class="QLabel" name="label_13">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+                <italic>false</italic>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>当前已购买注数：</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="lineEdit_11">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="placeholderText">
+               <string>x</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_12">
+            <item>
+             <widget class="QLabel" name="label_14">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+                <italic>false</italic>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>当前花费：</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="lineEdit_12">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="placeholderText">
+               <string>x</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_13">
+            <item>
+             <widget class="QLabel" name="label_15">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+                <italic>false</italic>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>当前盈利：</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="lineEdit_13">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="placeholderText">
+               <string>x</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <widget class="QLabel" name="label_6">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+                <italic>false</italic>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>一等奖中奖次数：</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="lineEdit_3">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="placeholderText">
+               <string>0</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QLabel" name="label_7">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+                <italic>false</italic>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>二等奖中奖次数：</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="lineEdit_4">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="placeholderText">
+               <string>0</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <item>
+             <widget class="QLabel" name="label_8">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+                <italic>false</italic>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>三等奖中奖次数：</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="lineEdit_5">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="placeholderText">
+               <string>0</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_7">
+            <item>
+             <widget class="QLabel" name="label_9">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+                <italic>false</italic>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>四等奖中奖次数：</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="lineEdit_6">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="placeholderText">
+               <string>0</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_8">
+            <item>
+             <widget class="QLabel" name="label_10">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+                <italic>false</italic>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>五等奖中奖次数：</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="lineEdit_7">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="placeholderText">
+               <string>0</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_9">
+            <item>
+             <widget class="QLabel" name="label_11">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+                <italic>false</italic>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>六等奖中奖次数：</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="lineEdit_8">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="placeholderText">
+               <string>0</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_14">
+      <item>
+       <widget class="QPushButton" name="pushButton">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>开始模拟购买</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_3">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>停止运行</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>点击查看中奖记录</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>844</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="accessibleName">
+    <string>彩票模拟器</string>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string/>
+    </property>
+   </widget>
+   <addaction name="menu"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="accessibleName">
+    <string>彩票模拟器</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
