@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>844</width>
-    <height>603</height>
+    <width>957</width>
+    <height>634</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -118,7 +118,7 @@
                <string/>
               </property>
               <property name="placeholderText">
-               <string>自定义号码，可不写，例如：23 09 18 31 28 14 02 * 3 或者：23 09 18 31 28 14 02，23 09 18 31 28 14 03，以英文逗号分割每组数据</string>
+               <string>自定义号码，可不写，如写应为：23 09 18 31 28 14 02</string>
               </property>
              </widget>
             </item>
@@ -309,7 +309,7 @@
                </font>
               </property>
               <property name="placeholderText">
-               <string>0</string>
+               <string>0，为方便计算，算为500万</string>
               </property>
              </widget>
             </item>
@@ -339,7 +339,7 @@
                </font>
               </property>
               <property name="placeholderText">
-               <string>0</string>
+               <string>0，为方便计算，算为100万</string>
               </property>
              </widget>
             </item>
@@ -369,7 +369,7 @@
                </font>
               </property>
               <property name="placeholderText">
-               <string>0</string>
+               <string>0，单注奖金固定为3000元</string>
               </property>
              </widget>
             </item>
@@ -399,7 +399,7 @@
                </font>
               </property>
               <property name="placeholderText">
-               <string>0</string>
+               <string>0，单注奖金固定为200元</string>
               </property>
              </widget>
             </item>
@@ -429,7 +429,7 @@
                </font>
               </property>
               <property name="placeholderText">
-               <string>0</string>
+               <string>0，单注奖金固定为10元</string>
               </property>
              </widget>
             </item>
@@ -459,7 +459,7 @@
                </font>
               </property>
               <property name="placeholderText">
-               <string>0</string>
+               <string>0，单注奖金固定为5元</string>
               </property>
              </widget>
             </item>
@@ -518,7 +518,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>844</width>
+     <width>957</width>
      <height>22</height>
     </rect>
    </property>
