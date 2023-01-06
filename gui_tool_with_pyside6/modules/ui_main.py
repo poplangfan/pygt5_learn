@@ -1416,7 +1416,7 @@ class Ui_MainWindow(object):
         self.btn_message.setFont(font)
         self.btn_message.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_message.setLayoutDirection(Qt.LeftToRight)
-        self.btn_message.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-envelope-open.png);")
+        self.btn_message.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-envelope-change.png);")
 
         self.verticalLayout_14.addWidget(self.btn_message)
 
@@ -1628,9 +1628,9 @@ class Ui_MainWindow(object):
         self.tableWidget.setSortingEnabled(__sortingEnabled)
 
         self.label.setText(QCoreApplication.translate("MainWindow", u"NEW PAGE TEST", None))
-        self.btn_message.setText(QCoreApplication.translate("MainWindow", u"Message", None))
+        self.btn_message.setText(QCoreApplication.translate("MainWindow", u"Theme Change", None))
         self.btn_print.setText(QCoreApplication.translate("MainWindow", u"Print", None))
         self.btn_logout.setText(QCoreApplication.translate("MainWindow", u"Logout", None))
         self.creditsLabel.setText(QCoreApplication.translate("MainWindow", u"By: blyang", None))
-        self.version.setText(QCoreApplication.translate("MainWindow", u"v1.0.0", None))
+        self.version.setText(QCoreApplication.translate("MainWindow", u"v1.0.2", None))
     # retranslateUi
