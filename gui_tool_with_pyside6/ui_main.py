@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainXtAojw.ui'
+## Form generated from reading UI file 'main.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.1
 ##
@@ -710,12 +710,12 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_8.addWidget(self.btn_save)
 
-        self.btn_computer = QPushButton(self.topMenu)
-        self.btn_computer.setObjectName(u"btn_computer")
-        self.btn_computer.setMinimumSize(QSize(0, 45))
-        self.btn_computer.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-devices.png);")
+        self.pushButton_2 = QPushButton(self.topMenu)
+        self.pushButton_2.setObjectName(u"pushButton_2")
+        self.pushButton_2.setMinimumSize(QSize(0, 45))
+        self.pushButton_2.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-devices.png);")
 
-        self.verticalLayout_8.addWidget(self.btn_computer)
+        self.verticalLayout_8.addWidget(self.pushButton_2)
 
         self.btn_exit = QPushButton(self.topMenu)
         self.btn_exit.setObjectName(u"btn_exit")
@@ -1411,39 +1411,17 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.new_page)
         self.computer_info = QWidget()
         self.computer_info.setObjectName(u"computer_info")
-        self.verticalLayout_22 = QVBoxLayout(self.computer_info)
-        self.verticalLayout_22.setObjectName(u"verticalLayout_22")
-        self.verticalLayout_21 = QVBoxLayout()
-        self.verticalLayout_21.setObjectName(u"verticalLayout_21")
-        self.graphicsView = QChartView(self.computer_info)
-        self.graphicsView.setObjectName(u"graphicsView")
-
-        self.verticalLayout_21.addWidget(self.graphicsView)
-
-        self.horizontalLayout_6 = QHBoxLayout()
-        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
         self.computer_info_start = QPushButton(self.computer_info)
         self.computer_info_start.setObjectName(u"computer_info_start")
+        self.computer_info_start.setGeometry(QRect(370, 570, 171, 24))
         self.computer_info_start.setLayoutDirection(Qt.LeftToRight)
-        self.computer_info_start.setAutoFillBackground(False)
-        self.computer_info_start.setStyleSheet(u"background-color: rgb(52, 59, 72);")
-
-        self.horizontalLayout_6.addWidget(self.computer_info_start)
-
+        self.graphicsView = QChartView(self.computer_info)
+        self.graphicsView.setObjectName(u"graphicsView")
+        self.graphicsView.setGeometry(QRect(80, 50, 1011, 441))
         self.computer_info_clear = QPushButton(self.computer_info)
         self.computer_info_clear.setObjectName(u"computer_info_clear")
+        self.computer_info_clear.setGeometry(QRect(600, 570, 171, 24))
         self.computer_info_clear.setLayoutDirection(Qt.LeftToRight)
-        self.computer_info_clear.setAutoFillBackground(False)
-        self.computer_info_clear.setStyleSheet(u"background-color: rgb(52, 59, 72);")
-
-        self.horizontalLayout_6.addWidget(self.computer_info_clear)
-
-
-        self.verticalLayout_21.addLayout(self.horizontalLayout_6)
-
-
-        self.verticalLayout_22.addLayout(self.verticalLayout_21)
-
         self.stackedWidget.addWidget(self.computer_info)
 
         self.verticalLayout_15.addWidget(self.stackedWidget)
@@ -1594,14 +1572,14 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.titleLeftApp.setText(QCoreApplication.translate("MainWindow", u"Tools", None))
+        self.titleLeftApp.setText(QCoreApplication.translate("MainWindow", u"PyDracula", None))
         self.titleLeftDescription.setText(QCoreApplication.translate("MainWindow", u"Modern GUI / Flat Style", None))
         self.toggleButton.setText(QCoreApplication.translate("MainWindow", u"Hide", None))
         self.btn_home.setText(QCoreApplication.translate("MainWindow", u"Home", None))
         self.btn_widgets.setText(QCoreApplication.translate("MainWindow", u"Widgets", None))
         self.btn_new.setText(QCoreApplication.translate("MainWindow", u"New", None))
         self.btn_save.setText(QCoreApplication.translate("MainWindow", u"Save", None))
-        self.btn_computer.setText(QCoreApplication.translate("MainWindow", u"Computer Info", None))
+        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.btn_exit.setText(QCoreApplication.translate("MainWindow", u"Exit", None))
         self.toggleLeftBox.setText(QCoreApplication.translate("MainWindow", u"Left Box", None))
         self.extraLabel.setText(QCoreApplication.translate("MainWindow", u"Left Box", None))
@@ -1629,7 +1607,7 @@ class Ui_MainWindow(object):
 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-in"
                         "dent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600; color:#ff79c6;\">Convert QRC</span></p>\n"
 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt; color:#ffffff;\">pyside6-rcc resources.qrc -o resources_rc.py</span></p></body></html>", None))
-        self.titleRightInfo.setText(QCoreApplication.translate("MainWindow", u"\u5de5\u5177\u767e\u5b9d\u7bb1", None))
+        self.titleRightInfo.setText(QCoreApplication.translate("MainWindow", u"PyDracula APP - Theme with colors based on Dracula for Python.", None))
 #if QT_CONFIG(tooltip)
         self.settingsTopBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Settings", None))
 #endif // QT_CONFIG(tooltip)
@@ -1718,7 +1696,7 @@ class Ui_MainWindow(object):
         self.btn_message.setText(QCoreApplication.translate("MainWindow", u"Message", None))
         self.btn_print.setText(QCoreApplication.translate("MainWindow", u"Print", None))
         self.btn_logout.setText(QCoreApplication.translate("MainWindow", u"Logout", None))
-        self.creditsLabel.setText(QCoreApplication.translate("MainWindow", u"By: blyang", None))
+        self.creditsLabel.setText(QCoreApplication.translate("MainWindow", u"By: Wanderson M. Pimenta", None))
         self.version.setText(QCoreApplication.translate("MainWindow", u"v1.0.3", None))
     # retranslateUi
 

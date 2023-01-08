@@ -16,17 +16,54 @@
 
 import sys
 import os
-import platform
+import time
+
+import psutil
 
 # IMPORT / GUI AND MODULES AND WIDGETS
 # ///////////////////////////////////////////////////////////////
 from modules import *
 from widgets import *
-os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
+from PySide6.QtCharts import QChart, QLineSeries, QValueAxis
+
+os.environ["QT_FONT_DPI"] = "96"  # FIX Problem for High DPI and Scale above 100%
 
 # SET AS GLOBAL WIDGETS
 # ///////////////////////////////////////////////////////////////
 widgets = None
+
+
+class NewThread(QThread):
+    # 自定义信号声明
+    # 使用自定义信号和UI主线程通讯，参数是发送信号时附带参数的数据类型，可以是str、int、list等
+    finishSignal = Signal(str)
+
+    # 带一个参数t
+    def __init__(self, parent=None):
+        super(NewThread, self).__init__(parent)
+
+    # run函数是子线程中的操作，线程启动后开始执行
+    if os.path.exists(f'./computer_info.csv'):
+        pass
+    else:
+        with open(r'./computer_info.csv', 'w') as f:
+            pass
+
+    def run(self):
+        timer = 0
+        while True:
+            timer += 1
+            cpu_percent = psutil.cpu_percent(interval=1)
+            cpu_info = cpu_percent
+            virtual_memory = psutil.virtual_memory()
+            memory_percent = virtual_memory.percent
+            with open(r'./computer_info.csv', 'a') as f:
+                f.write(f"{timer},{cpu_info},{memory_percent}\n")
+            time.sleep(2)
+            # 发射自定义信号
+            # 通过emit函数将参数i传递给主线程，触发自定义信号
+            self.finishSignal.emit("1")  # 注意这里与_signal = pyqtSignal(str)中的类型相同
+
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -73,16 +110,25 @@ class MainWindow(QMainWindow):
         widgets.btn_save.clicked.connect(self.buttonClick)
         #  新增切换皮肤功能
         widgets.btn_message.clicked.connect(self.buttonClick)
+        # 新增电脑数据分析功能
+        widgets.btn_computer.clicked.connect(self.buttonClick)
+        widgets.computer_info_start.clicked.connect(self.start_computer_info)
+
+        # widgets.computer_info_start.clicked.connect(get_computer_info)  # 此方法会导致页面卡顿
+        # 清理电脑数据
+        widgets.computer_info_clear.clicked.connect(self.clear_computer_info)
 
         # EXTRA LEFT BOX
         def openCloseLeftBox():
             UIFunctions.toggleLeftBox(self, True)
+
         widgets.toggleLeftBox.clicked.connect(openCloseLeftBox)
         widgets.extraCloseColumnBtn.clicked.connect(openCloseLeftBox)
 
         # EXTRA RIGHT BOX
         def openCloseRightBox():
             UIFunctions.toggleRightBox(self, True)
+
         widgets.settingsTopBtn.clicked.connect(openCloseRightBox)
 
         # SHOW APP
@@ -113,7 +159,6 @@ class MainWindow(QMainWindow):
         widgets.stackedWidget.setCurrentWidget(widgets.home)
         widgets.btn_home.setStyleSheet(UIFunctions.selectMenu(widgets.btn_home.styleSheet()))
 
-
     # BUTTONS CLICK
     # Post here your functions for clicked buttons
     # ///////////////////////////////////////////////////////////////
@@ -136,9 +181,9 @@ class MainWindow(QMainWindow):
 
         # SHOW NEW PAGE
         if btnName == "btn_new":
-            widgets.stackedWidget.setCurrentWidget(widgets.new_page) # SET PAGE
-            UIFunctions.resetStyle(self, btnName) # RESET ANOTHERS BUTTONS SELECTED
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet())) # SELECT MENU
+            widgets.stackedWidget.setCurrentWidget(widgets.new_page)  # SET PAGE
+            UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
+            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
 
         if btnName == "btn_save":
             # print("Save BTN clicked!")
@@ -158,9 +203,18 @@ class MainWindow(QMainWindow):
                 AppFunctions.setThemeHack(self)
                 self.useCustomTheme = True
 
+        # SHOW NEW PAGE
+        if btnName == "btn_computer":
+            widgets.stackedWidget.setCurrentWidget(widgets.computer_info)  # SET PAGE
+            UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
+            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
+
+            self.seriesS = QLineSeries()
+            self.seriesL = QLineSeries()
+            self.seriesS.setName("cpu")
+            self.seriesL.setName("memory")
         # PRINT BTN NAME
         print(f'Button "{btnName}" pressed!')
-
 
     # RESIZE EVENTS
     # ///////////////////////////////////////////////////////////////
@@ -179,6 +233,55 @@ class MainWindow(QMainWindow):
             print('Mouse click: LEFT CLICK')
         if event.buttons() == Qt.RightButton:
             print('Mouse click: RIGHT CLICK')
+
+    def start_computer_info(self):
+        """
+        开始获取电脑数据
+        :return:
+        """
+        # 开始分析记录电脑数据，需持续获取，然后分析
+        self.thread1 = NewThread()  # 实例化一个线程
+        # 将线程thread的信号finishSignal和UI主线程中的槽函数data_display进行连接
+        self.thread1.finishSignal.connect(self.data_display)
+        # 启动线程，执行线程类中run函数
+        self.thread1.start()
+
+    def data_display(self, str_):
+        """
+        电脑信息的数据展示
+        :return:
+        """
+        # 获取已经记录好的数据并展示
+        # 设置一个flag
+        with open(r'./computer_info.csv', 'r') as f:
+            reader = f.readlines()
+            reader_last = reader[-1].replace('\n', '').split(',')
+            # 横坐标
+            col = int(reader_last[0])
+            # cpu
+            cpu = float(reader_last[1])
+            # 内存
+            memory = float(reader_last[2])
+
+        self.seriesS.append(col, cpu)
+        self.seriesL.append(col, memory)
+        self.chart = QChart()  # 创建 Chart
+        self.chart.setTitle("设备资源图")
+        self.chart.addSeries(self.seriesS)
+        self.chart.addSeries(self.seriesL)
+        self.chart.createDefaultAxes()
+        widgets.graphicsView.setChart(self.chart)
+
+    def clear_computer_info(self):
+        """
+        清除设备表格信息
+        :return:
+        """
+        # 更改设置的flag
+        self.seriesS.clear()
+        self.seriesL.clear()
+        self.chart.addSeries(self.seriesS)
+        self.chart.addSeries(self.seriesL)
 
 
 if __name__ == "__main__":
