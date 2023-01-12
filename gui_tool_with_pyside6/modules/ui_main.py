@@ -1,14 +1,13 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainXtAojw.ui'
+## Form generated from reading UI file 'mainWrwrgf.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide6.QtCharts import QChartView
 from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
     QMetaObject, QObject, QPoint, QRect,
     QSize, QTime, QUrl, Qt)
@@ -17,12 +16,12 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QAbstractItemView, QAbstractScrollArea, QApplication, QCheckBox,
-    QComboBox, QCommandLinkButton, QFrame, QGridLayout,
-    QHBoxLayout, QHeaderView, QLabel, QLineEdit,
-    QMainWindow, QPlainTextEdit, QPushButton, QRadioButton,
-    QScrollArea, QScrollBar, QSizePolicy, QSlider,
-    QStackedWidget, QTableWidget, QTableWidgetItem, QTextEdit,
-    QVBoxLayout, QWidget)
+    QComboBox, QCommandLinkButton, QFrame, QGraphicsView,
+    QGridLayout, QHBoxLayout, QHeaderView, QLabel,
+    QLineEdit, QMainWindow, QPlainTextEdit, QPushButton,
+    QRadioButton, QScrollArea, QScrollBar, QSizePolicy,
+    QSlider, QStackedWidget, QTableWidget, QTableWidgetItem,
+    QTextEdit, QVBoxLayout, QWidget)
 import resources_rc
 
 class Ui_MainWindow(object):
@@ -1402,6 +1401,24 @@ class Ui_MainWindow(object):
         self.new_page.setObjectName(u"new_page")
         self.verticalLayout_20 = QVBoxLayout(self.new_page)
         self.verticalLayout_20.setObjectName(u"verticalLayout_20")
+        self.pushButton_2 = QPushButton(self.new_page)
+        self.pushButton_2.setObjectName(u"pushButton_2")
+        self.pushButton_2.setStyleSheet(u"background-color: rgb(52, 59, 72);")
+
+        self.verticalLayout_20.addWidget(self.pushButton_2)
+
+        self.pushButton_3 = QPushButton(self.new_page)
+        self.pushButton_3.setObjectName(u"pushButton_3")
+        self.pushButton_3.setStyleSheet(u"background-color: rgb(52, 59, 72);")
+
+        self.verticalLayout_20.addWidget(self.pushButton_3)
+
+        self.pushButton_4 = QPushButton(self.new_page)
+        self.pushButton_4.setObjectName(u"pushButton_4")
+        self.pushButton_4.setStyleSheet(u"background-color: rgb(52, 59, 72);")
+
+        self.verticalLayout_20.addWidget(self.pushButton_4)
+
         self.label = QLabel(self.new_page)
         self.label.setObjectName(u"label")
         self.label.setAlignment(Qt.AlignCenter)
@@ -1415,7 +1432,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_22.setObjectName(u"verticalLayout_22")
         self.verticalLayout_21 = QVBoxLayout()
         self.verticalLayout_21.setObjectName(u"verticalLayout_21")
-        self.graphicsView = QChartView(self.computer_info)
+        self.graphicsView = QGraphicsView(self.computer_info)
         self.graphicsView.setObjectName(u"graphicsView")
 
         self.verticalLayout_21.addWidget(self.graphicsView)
@@ -1586,7 +1603,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1594,14 +1611,14 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.titleLeftApp.setText(QCoreApplication.translate("MainWindow", u"Tools", None))
+        self.titleLeftApp.setText(QCoreApplication.translate("MainWindow", u"PyDracula", None))
         self.titleLeftDescription.setText(QCoreApplication.translate("MainWindow", u"Modern GUI / Flat Style", None))
         self.toggleButton.setText(QCoreApplication.translate("MainWindow", u"Hide", None))
         self.btn_home.setText(QCoreApplication.translate("MainWindow", u"Home", None))
         self.btn_widgets.setText(QCoreApplication.translate("MainWindow", u"Widgets", None))
         self.btn_new.setText(QCoreApplication.translate("MainWindow", u"New", None))
         self.btn_save.setText(QCoreApplication.translate("MainWindow", u"Save", None))
-        self.btn_computer.setText(QCoreApplication.translate("MainWindow", u"Computer Info", None))
+        self.btn_computer.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.btn_exit.setText(QCoreApplication.translate("MainWindow", u"Exit", None))
         self.toggleLeftBox.setText(QCoreApplication.translate("MainWindow", u"Left Box", None))
         self.extraLabel.setText(QCoreApplication.translate("MainWindow", u"Left Box", None))
@@ -1712,6 +1729,9 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"Line", None));
         self.tableWidget.setSortingEnabled(__sortingEnabled)
 
+        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"\u6253\u5f00\u672c\u5730\u8bf4\u660e\u4e66\u6587\u4ef6", None))
+        self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"\u6253\u5f00\u5916\u90e8\u7f51\u9875", None))
+        self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"\u5207\u6362\u56fe\u7247", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"NEW PAGE TEST", None))
         self.computer_info_start.setText(QCoreApplication.translate("MainWindow", u"\u7ed8\u56fe", None))
         self.computer_info_clear.setText(QCoreApplication.translate("MainWindow", u"\u6e05\u9664", None))

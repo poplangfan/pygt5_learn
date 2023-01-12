@@ -1878,7 +1878,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                       <string notr="true">background: transparent;</string>
                      </property>
                      <property name="currentIndex">
-                      <number>3</number>
+                      <number>2</number>
                      </property>
                      <widget class="QWidget" name="home">
                       <property name="styleSheet">
@@ -2729,6 +2729,36 @@ background-repeat: no-repeat;</string>
                      </widget>
                      <widget class="QWidget" name="new_page">
                       <layout class="QVBoxLayout" name="verticalLayout_20">
+                       <item>
+                        <widget class="QPushButton" name="pushButton_2">
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(52, 59, 72);</string>
+                         </property>
+                         <property name="text">
+                          <string>打开本地说明书文件</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="pushButton_3">
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(52, 59, 72);</string>
+                         </property>
+                         <property name="text">
+                          <string>打开外部网页</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="pushButton_4">
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(52, 59, 72);</string>
+                         </property>
+                         <property name="text">
+                          <string>切换图片</string>
+                         </property>
+                        </widget>
+                       </item>
                        <item>
                         <widget class="QLabel" name="label">
                          <property name="text">

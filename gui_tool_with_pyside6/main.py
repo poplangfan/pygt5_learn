@@ -118,6 +118,13 @@ class MainWindow(QMainWindow):
         # 清理电脑数据
         widgets.computer_info_clear.clicked.connect(self.clear_computer_info)
 
+        # 打开说明书
+        widgets.pushButton_2.clicked.connect(self.open_guide_book)
+        # 打开网址
+        widgets.pushButton_3.clicked.connect(self.open_web)
+        # 切换图片
+        widgets.pushButton_4.clicked.connect(self.change_pic)
+
         # EXTRA LEFT BOX
         def openCloseLeftBox():
             UIFunctions.toggleLeftBox(self, True)
@@ -282,6 +289,29 @@ class MainWindow(QMainWindow):
         self.seriesL.clear()
         self.chart.addSeries(self.seriesS)
         self.chart.addSeries(self.seriesL)
+
+    def open_guide_book(self):
+        import webbrowser
+        webbrowser.open("说明书" + '.docx')
+
+    def open_web(self):
+        import webbrowser
+        webbrowser.open('www.baidu.com')
+
+    def change_pic(self):
+        url_list = [
+            "./1.jpg",
+            "./2.jpg",
+            "./3.jpg",
+            "./4.jpg",
+            "./5.jpg",
+        ]
+        import random
+        index = random.randint(0, 4)
+        lb1 = widgets.label
+        pix = QPixmap(url_list[index]).scaled(lb1.size(), aspectMode=Qt.KeepAspectRatio)
+        lb1.setPixmap(pix)
+        lb1.repaint()
 
 
 if __name__ == "__main__":
